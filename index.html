@@ -23,6 +23,7 @@
             text-align: center;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: aparecer 1s ease;
             transition: 0.3s;
         }
 
@@ -69,7 +70,27 @@
 
         button:hover {
             transform: scale(1.05);
-            background: linear-gradient(135deg, #005582, #004466);
+        }
+
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #1ebe5d);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #eee;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -80,13 +101,28 @@
         <img class="foto" src="foto.jpg" alt="Foto Michelle">
 
         <h1>Oi, eu sou a Michelle 👩‍💻</h1>
-        <p>Estudante de Desenvolvimento de Sistemas</p>
+        <p>Desenvolvedora em formação 🚀</p>
+
+        <p style="font-size:12px; margin-top:10px;">
+            Apaixonada por tecnologia, criando meus primeiros projetos e evoluindo todos os dias 💻✨
+        </p>
 
         <a href="https://www.linkedin.com/in/michelle-rossinholli/" target="_blank">
             <button>
                 <i class="fab fa-linkedin"></i> Meu LinkedIn
             </button>
         </a>
+
+        <a href="https://wa.me/5513996099865" target="_blank">
+            <button class="whatsapp">
+                <i class="fab fa-whatsapp"></i> Fale comigo
+            </button>
+        </a>
+
+        <hr>
+
+        <p style="font-size:14px; color:#333;"><b>Meus projetos:</b></p>
+        <p style="font-size:12px;">🔹 Meu primeiro site publicado</p>
     </div>
 
 </body>
