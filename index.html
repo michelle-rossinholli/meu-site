@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Michelle Dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .linkedin {
+            background: linear-gradient(135deg, #0077b5, #005582);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            
+        }
+        button {
+    width: 100%;
+}
+
+        .foto:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 320px;
+            margin: 100px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 22px;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #4CAF50, #2e7d32);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img class="foto" src="foto.jpg">
+        <h1>Oi, eu sou a Michelle 👩‍💻</h1>
+        <p>Estudante de Desenvolvimento de Sistemas</p>
+
+    
+        <a href="https://www.linkedin.com/in/michelle-rossinholli/" target="_blank">
+            <button class="linkedin">
+                <i class="fab fa-linkedin"></i> Meu LinkedIn
+            </button>
+        </a>
+        </a>
+    </div>
+
+    <script>
+        function mensagem() {
+            alert("Você clicou no botão 😄");
+        }
+    </script>
+
+</body>
+
+</html>
