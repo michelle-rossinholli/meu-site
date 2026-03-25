@@ -3,34 +3,46 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Calculadora Gamer Michelle</title>
+    <title>Calculadora Hacker Michelle</title>
 
     <style>
         body {
-            background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
-            font-family: Arial;
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(270deg, #000000, #0f0c29, #302b63);
+            background-size: 600% 600%;
+            animation: fundoAnimado 10s ease infinite;
+        }
+
+        @keyframes fundoAnimado {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
 
         .calculadora {
-            background: #111;
+            background: #050505;
             padding: 25px;
             border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0,255,255,0.2);
+            box-shadow: 0 0 40px #00ffff;
             width: 300px;
-            border: 1px solid rgba(0,255,255,0.2);
+            border: 1px solid #00ffff;
         }
 
         .titulo {
             text-align: center;
             color: #00ffff;
             margin-bottom: 15px;
-            font-size: 18px;
-            letter-spacing: 1px;
+            animation: piscar 1.5s infinite;
+        }
+
+        @keyframes piscar {
+            0%,100% {opacity: 1;}
+            50% {opacity: 0.4;}
         }
 
         input {
@@ -42,9 +54,9 @@
             padding: 10px;
             border-radius: 10px;
             border: none;
-            background: #000;
+            background: black;
             color: #00ffcc;
-            box-shadow: 0 0 10px #00ffcc;
+            box-shadow: 0 0 15px #00ffcc;
         }
 
         .botoes {
@@ -59,21 +71,20 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            background: #1a1a1a;
+            background: #111;
             color: white;
             transition: 0.2s;
         }
 
         button:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 10px #00ffff;
+            box-shadow: 0 0 15px #00ffff;
         }
 
         button:active {
             transform: scale(0.95);
         }
 
-        /* CORES GAMER */
         .numero {
             color: #00e5ff;
         }
@@ -86,24 +97,27 @@
             background: #00ff88;
             color: black;
             grid-row: span 2;
-            box-shadow: 0 0 15px #00ff88;
+            box-shadow: 0 0 20px #00ff88;
         }
 
         .limpar {
             background: #ff0033;
-            color: white;
-            box-shadow: 0 0 10px #ff0033;
+            box-shadow: 0 0 15px #ff0033;
         }
 
         .zero {
             grid-column: span 2;
         }
 
-        .rodape {
-            text-align: center;
-            color: #666;
-            font-size: 11px;
+        .voltar {
             margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background: #00ffff;
+            color: black;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -112,35 +126,37 @@
 
     <div class="calculadora">
 
-        <div class="titulo">🎮 MODO GAMER ON</div>
+        <div class="titulo">⚡ HACKER MODE ⚡</div>
 
         <input type="text" id="tela" disabled>
 
         <div class="botoes">
-            <button onclick="limpar()" class="limpar">C</button>
-            <button onclick="add('/')" class="operador">÷</button>
-            <button onclick="add('*')" class="operador">×</button>
-            <button onclick="add('-')" class="operador">−</button>
+            <button onclick="som(); limpar()" class="limpar">C</button>
+            <button onclick="som(); add('/')" class="operador">÷</button>
+            <button onclick="som(); add('*')" class="operador">×</button>
+            <button onclick="som(); add('-')" class="operador">−</button>
 
-            <button onclick="add('7')" class="numero">7</button>
-            <button onclick="add('8')" class="numero">8</button>
-            <button onclick="add('9')" class="numero">9</button>
-            <button onclick="add('+')" class="operador">+</button>
+            <button onclick="som(); add('7')" class="numero">7</button>
+            <button onclick="som(); add('8')" class="numero">8</button>
+            <button onclick="som(); add('9')" class="numero">9</button>
+            <button onclick="som(); add('+')" class="operador">+</button>
 
-            <button onclick="add('4')" class="numero">4</button>
-            <button onclick="add('5')" class="numero">5</button>
-            <button onclick="add('6')" class="numero">6</button>
-            <button onclick="calcular()" class="igual">=</button>
+            <button onclick="som(); add('4')" class="numero">4</button>
+            <button onclick="som(); add('5')" class="numero">5</button>
+            <button onclick="som(); add('6')" class="numero">6</button>
+            <button onclick="som(); calcular()" class="igual">=</button>
 
-            <button onclick="add('1')" class="numero">1</button>
-            <button onclick="add('2')" class="numero">2</button>
-            <button onclick="add('3')" class="numero">3</button>
+            <button onclick="som(); add('1')" class="numero">1</button>
+            <button onclick="som(); add('2')" class="numero">2</button>
+            <button onclick="som(); add('3')" class="numero">3</button>
 
-            <button onclick="add('0')" class="numero zero">0</button>
-            <button onclick="add('.')">.</button>
+            <button onclick="som(); add('0')" class="numero zero">0</button>
+            <button onclick="som(); add('.')">.</button>
         </div>
 
-        <div class="rodape">Michelle Dev 🚀</div>
+        <button class="voltar" onclick="window.location.href='index.html'">
+            ⬅ Voltar para o site
+        </button>
 
     </div>
 
@@ -156,6 +172,11 @@
         function calcular() {
             let resultado = eval(document.getElementById("tela").value);
             document.getElementById("tela").value = resultado;
+        }
+
+        function som() {
+            let audio = new Audio("https://www.soundjay.com/button/sounds/button-16.mp3");
+            audio.play();
         }
     </script>
 
