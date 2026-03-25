@@ -3,37 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Calculadora Michelle</title>
+    <title>Calculadora Gamer Michelle</title>
 
     <style>
         body {
-            background: linear-gradient(135deg, #1e1e2f, #3a3a5a);
+            background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
             font-family: Arial;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
 
         .calculadora {
-            background: #2c2c3e;
+            background: #111;
             padding: 25px;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            width: 280px;
+            box-shadow: 0 0 30px rgba(0,255,255,0.2);
+            width: 300px;
+            border: 1px solid rgba(0,255,255,0.2);
+        }
+
+        .titulo {
+            text-align: center;
+            color: #00ffff;
+            margin-bottom: 15px;
+            font-size: 18px;
+            letter-spacing: 1px;
         }
 
         input {
             width: 100%;
             height: 60px;
-            font-size: 24px;
+            font-size: 26px;
             margin-bottom: 15px;
             text-align: right;
             padding: 10px;
             border-radius: 10px;
             border: none;
-            background: #1a1a2b;
-            color: white;
+            background: #000;
+            color: #00ffcc;
+            box-shadow: 0 0 10px #00ffcc;
         }
 
         .botoes {
@@ -46,37 +57,53 @@
             padding: 18px;
             font-size: 18px;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
-            background: #444;
+            background: #1a1a1a;
             color: white;
             transition: 0.2s;
         }
 
         button:hover {
-            transform: scale(1.05);
-            background: #555;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #00ffff;
         }
 
         button:active {
             transform: scale(0.95);
         }
 
+        /* CORES GAMER */
+        .numero {
+            color: #00e5ff;
+        }
+
         .operador {
-            background: #ff9500;
+            color: #ff00ff;
         }
 
         .igual {
-            background: #4CAF50;
+            background: #00ff88;
+            color: black;
             grid-row: span 2;
+            box-shadow: 0 0 15px #00ff88;
         }
 
         .limpar {
-            background: #f44336;
+            background: #ff0033;
+            color: white;
+            box-shadow: 0 0 10px #ff0033;
         }
 
         .zero {
             grid-column: span 2;
+        }
+
+        .rodape {
+            text-align: center;
+            color: #666;
+            font-size: 11px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -84,6 +111,9 @@
 <body>
 
     <div class="calculadora">
+
+        <div class="titulo">🎮 MODO GAMER ON</div>
+
         <input type="text" id="tela" disabled>
 
         <div class="botoes">
@@ -92,23 +122,26 @@
             <button onclick="add('*')" class="operador">×</button>
             <button onclick="add('-')" class="operador">−</button>
 
-            <button onclick="add('7')">7</button>
-            <button onclick="add('8')">8</button>
-            <button onclick="add('9')">9</button>
+            <button onclick="add('7')" class="numero">7</button>
+            <button onclick="add('8')" class="numero">8</button>
+            <button onclick="add('9')" class="numero">9</button>
             <button onclick="add('+')" class="operador">+</button>
 
-            <button onclick="add('4')">4</button>
-            <button onclick="add('5')">5</button>
-            <button onclick="add('6')">6</button>
+            <button onclick="add('4')" class="numero">4</button>
+            <button onclick="add('5')" class="numero">5</button>
+            <button onclick="add('6')" class="numero">6</button>
             <button onclick="calcular()" class="igual">=</button>
 
-            <button onclick="add('1')">1</button>
-            <button onclick="add('2')">2</button>
-            <button onclick="add('3')">3</button>
+            <button onclick="add('1')" class="numero">1</button>
+            <button onclick="add('2')" class="numero">2</button>
+            <button onclick="add('3')" class="numero">3</button>
 
-            <button onclick="add('0')" class="zero">0</button>
+            <button onclick="add('0')" class="numero zero">0</button>
             <button onclick="add('.')">.</button>
         </div>
+
+        <div class="rodape">Michelle Dev 🚀</div>
+
     </div>
 
     <script>
