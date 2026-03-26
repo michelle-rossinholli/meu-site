@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -17,12 +18,17 @@
         .container {
             background: white;
             width: 320px;
-            margin: 80px auto;
+            margin: 100px auto;
             padding: 30px;
             text-align: center;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             animation: aparecer 1s ease;
+            transition: 0.3s;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
         }
 
         .foto {
@@ -32,10 +38,12 @@
             object-fit: cover;
             object-position: center top;
             transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .foto:hover {
             transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
@@ -53,7 +61,7 @@
             background: linear-gradient(135deg, #0077b5, #005582);
             color: white;
             border: none;
-            padding: 12px;
+            padding: 12px 20px;
             border-radius: 25px;
             cursor: pointer;
             transition: 0.3s;
@@ -75,43 +83,57 @@
             margin: 20px 0;
         }
 
-        h2 {
-            margin-top: 20px;
-            color: #333;
+        /* LISTA */
+        .lista-projetos {
+            text-align: left;
+            font-size: 13px;
+            color: #555;
+            padding-left: 20px;
         }
 
         /* CARD PROJETO */
-        .card {
+        .projeto {
             background: #f9f9f9;
-            border-radius: 15px;
             padding: 15px;
+            border-radius: 15px;
             margin-top: 15px;
-            text-align: left;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             transition: 0.3s;
         }
 
-        .card:hover {
+        .projeto:hover {
             transform: scale(1.03);
         }
 
-        .card img {
+        .projeto img {
             width: 100%;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
 
-        .card h3 {
-            margin: 10px 0 5px;
-            color: #333;
+        .projeto h3 {
+            margin: 5px 0;
+            font-size: 16px;
         }
 
-        .card p {
+        .projeto p {
             font-size: 12px;
         }
 
-        .card a button {
-            width: 100%;
+        .projeto a {
+            display: inline-block;
             margin-top: 10px;
-            background: linear-gradient(135deg, #ff4d4d, #cc0000);
+            padding: 8px 15px;
+            background: #6c63ff;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .projeto a:hover {
+            background: #4a42cc;
         }
 
         @keyframes aparecer {
@@ -130,13 +152,12 @@
 <body>
 
     <div class="container">
-
         <img class="foto" src="foto.jpg" alt="Foto Michelle">
 
         <h1>Oi, eu sou a Michelle 👩‍💻</h1>
         <p>Desenvolvedora em formação 🚀</p>
 
-        <p style="font-size:12px;">
+        <p style="font-size:12px; margin-top:10px;">
             Apaixonada por tecnologia, criando meus primeiros projetos e evoluindo todos os dias 💻✨
         </p>
 
@@ -154,19 +175,21 @@
 
         <hr>
 
-        <h2>Meus projetos</h2>
+        <!-- TÍTULO -->
+        <h2 style="color:#333;">Meus projetos</h2>
 
-        <!-- CARD CALCULADORA -->
-        <div class="card">
-            <img src="calculadora.png" alt="Projeto Calculadora">
+        <!-- LISTA -->
+        <ul class="lista-projetos">
+            <li>Meu primeiro site publicado</li>
+            <li>Calculadora em JavaScript</li>
+        </ul>
 
-            <h3>Calculadora Gamer</h3>
-
-            <p>Calculadora feita com HTML, CSS e JavaScript com estilo gamer.</p>
-
-            <a href="calculadora.html">
-                <button>Ver Projeto</button>
-            </a>
+        <!-- CARD -->
+        <div class="projeto">
+            <img src="calculadora.png" alt="Calculadora">
+            <h3>🎮 Calculadora Gamer</h3>
+            <p>Calculadora interativa com tema gamer, efeitos e JavaScript.</p>
+            <a href="calculadora.html" target="_blank">Ver projeto</a>
         </div>
 
     </div>
