@@ -1,128 +1,179 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <title>Calculadora Michelle</title>
+    <title>Michelle Dev</title>
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         body {
-            background: linear-gradient(135deg, #1e1e2f, #3a3a5a);
-            font-family: Arial;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: Arial, sans-serif;
+            margin: 0;
         }
 
-        .calculadora {
-            background: #2c2c3e;
-            padding: 25px;
+        .container {
+            background: white;
+            width: 320px;
+            margin: 80px auto;
+            padding: 30px;
+            text-align: center;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            width: 280px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: aparecer 1s ease;
         }
 
-        input {
-            width: 100%;
-            height: 60px;
-            font-size: 24px;
-            margin-bottom: 15px;
-            text-align: right;
-            padding: 10px;
-            border-radius: 10px;
-            border: none;
-            background: #1a1a2b;
-            color: white;
+        .foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            transition: 0.3s;
         }
 
-        .botoes {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+        .foto:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 22px;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
         }
 
         button {
-            padding: 18px;
-            font-size: 18px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            background: #444;
+            width: 100%;
+            background: linear-gradient(135deg, #0077b5, #005582);
             color: white;
-            transition: 0.2s;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
         }
 
         button:hover {
             transform: scale(1.05);
-            background: #555;
         }
 
-        button:active {
-            transform: scale(0.95);
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #1ebe5d);
         }
 
-        .operador {
-            background: #ff9500;
+        hr {
+            border: none;
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
         }
 
-        .igual {
-            background: #4CAF50;
-            grid-row: span 2;
+        h2 {
+            margin-top: 20px;
+            color: #333;
         }
 
-        .limpar {
-            background: #f44336;
+        /* CARD PROJETO */
+        .card {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: left;
+            transition: 0.3s;
         }
 
-        .zero {
-            grid-column: span 2;
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 12px;
+        }
+
+        .card a button {
+            width: 100%;
+            margin-top: 10px;
+            background: linear-gradient(135deg, #ff4d4d, #cc0000);
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="calculadora">
-        <input type="text" id="tela" disabled>
+    <div class="container">
 
-        <div class="botoes">
-            <button onclick="limpar()" class="limpar">C</button>
-            <button onclick="add('/')" class="operador">÷</button>
-            <button onclick="add('*')" class="operador">×</button>
-            <button onclick="add('-')" class="operador">−</button>
+        <img class="foto" src="foto.jpg" alt="Foto Michelle">
 
-            <button onclick="add('7')">7</button>
-            <button onclick="add('8')">8</button>
-            <button onclick="add('9')">9</button>
-            <button onclick="add('+')" class="operador">+</button>
+        <h1>Oi, eu sou a Michelle 👩‍💻</h1>
+        <p>Desenvolvedora em formação 🚀</p>
 
-            <button onclick="add('4')">4</button>
-            <button onclick="add('5')">5</button>
-            <button onclick="add('6')">6</button>
-            <button onclick="calcular()" class="igual">=</button>
+        <p style="font-size:12px;">
+            Apaixonada por tecnologia, criando meus primeiros projetos e evoluindo todos os dias 💻✨
+        </p>
 
-            <button onclick="add('1')">1</button>
-            <button onclick="add('2')">2</button>
-            <button onclick="add('3')">3</button>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/michelle-rossinholli/" target="_blank">
+            <button>
+                <i class="fab fa-linkedin"></i> Meu LinkedIn
+            </button>
+        </a>
 
-            <button onclick="add('0')" class="zero">0</button>
-            <button onclick="add('.')">.</button>
+        <!-- WhatsApp -->
+        <button class="whatsapp" onclick="mensagem()">
+            <i class="fab fa-whatsapp"></i> Fale comigo
+        </button>
+
+        <hr>
+
+        <h2>Meus projetos</h2>
+
+        <!-- CARD CALCULADORA -->
+        <div class="card">
+            <img src="calculadora.png" alt="Projeto Calculadora">
+
+            <h3>Calculadora Gamer</h3>
+
+            <p>Calculadora feita com HTML, CSS e JavaScript com estilo gamer.</p>
+
+            <a href="calculadora.html">
+                <button>Ver Projeto</button>
+            </a>
         </div>
+
     </div>
 
     <script>
-        function add(valor) {
-            document.getElementById("tela").value += valor;
-        }
-
-        function limpar() {
-            document.getElementById("tela").value = "";
-        }
-
-        function calcular() {
-            let resultado = eval(document.getElementById("tela").value);
-            document.getElementById("tela").value = resultado;
+        function mensagem() {
+            alert("Contato disponível mediante solicitação 😉");
         }
     </script>
 
