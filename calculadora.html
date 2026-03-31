@@ -3,98 +3,129 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Calculadora | Michelle Dev</title>
+    <title>Michelle Dev</title>
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: Arial, sans-serif;
             margin: 0;
-            height: 100vh;
-            background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
-            background-size: 600% 600%;
-            animation: fundoAnimado 10s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', sans-serif;
-            color: white;
-        }
-
-        @keyframes fundoAnimado {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .container {
+            background: white;
+            width: 320px;
+            margin: 80px auto;
+            padding: 30px;
             text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: aparecer 1s ease;
+        }
+
+        .foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            transition: 0.3s;
+        }
+
+        .foto:hover {
+            transform: scale(1.1);
         }
 
         h1 {
-            margin-bottom: 15px;
-            font-size: 20px;
-            color: #00ffcc;
+            color: #333;
+            font-size: 22px;
         }
 
-        .calculadora {
-            background: rgba(0,0,0,0.7);
-            padding: 20px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 30px rgba(0,255,200,0.3);
-            width: 260px;
-        }
-
-        .display {
-            width: 100%;
-            height: 50px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border: none;
-            padding: 10px;
-            font-size: 20px;
-            text-align: right;
-            background: #000;
-            color: #00ffcc;
-            box-shadow: inset 0 0 10px #00ffcc;
-        }
-
-        .botoes {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+        p {
+            color: #777;
+            font-size: 14px;
         }
 
         button {
-            height: 50px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            background: #1a1a1a;
+            width: 100%;
+            background: linear-gradient(135deg, #0077b5, #005582);
             color: white;
-            transition: 0.2s;
-            box-shadow: 0 0 5px rgba(0,255,200,0.2);
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
         }
 
         button:hover {
-            transform: scale(1.08);
-            background: #00ffcc;
-            color: black;
+            transform: scale(1.05);
         }
 
-        .igual {
-            background: #00ffcc;
-            color: black;
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #1ebe5d);
         }
 
-        .clear {
-            background: #ff4d4d;
+        hr {
+            border: none;
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
         }
 
-        .footer {
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        /* CARD */
+        .card {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        /* ÍCONE */
+        .icone-projeto {
+            font-size: 40px;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 12px;
+        }
+
+        .card a button {
             margin-top: 10px;
-            font-size: 10px;
-            color: #aaa;
+            background: linear-gradient(135deg, #ff4d4d, #cc0000);
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -103,60 +134,53 @@
 
     <div class="container">
 
-        <h1>💻 Calculadora Dev</h1>
+        <img class="foto" src="foto.jpg" alt="Foto Michelle">
 
-        <div class="calculadora">
+        <h1>Oi, eu sou a Michelle 👩‍💻</h1>
+        <p>Desenvolvedora em formação 🚀</p>
 
-            <input type="text" id="display" class="display" disabled>
+        <p style="font-size:12px;">
+            Apaixonada por tecnologia, criando meus primeiros projetos e evoluindo todos os dias 💻✨
+        </p>
 
-            <div class="botoes">
-                <button onclick="limpar()" class="clear">C</button>
-                <button onclick="add('/')">÷</button>
-                <button onclick="add('*')">×</button>
-                <button onclick="add('-')">-</button>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/michelle-rossinholli/" target="_blank">
+            <button>
+                <i class="fab fa-linkedin"></i> Meu LinkedIn
+            </button>
+        </a>
 
-                <button onclick="add('7')">7</button>
-                <button onclick="add('8')">8</button>
-                <button onclick="add('9')">9</button>
-                <button onclick="add('+')">+</button>
+        <!-- WhatsApp -->
+        <button class="whatsapp" onclick="mensagem()">
+            <i class="fab fa-whatsapp"></i> Fale comigo
+        </button>
 
-                <button onclick="add('4')">4</button>
-                <button onclick="add('5')">5</button>
-                <button onclick="add('6')">6</button>
-                <button onclick="calcular()" class="igual">=</button>
+        <hr>
 
-                <button onclick="add('1')">1</button>
-                <button onclick="add('2')">2</button>
-                <button onclick="add('3')">3</button>
+        <h2>Meus projetos</h2>
 
-                <button onclick="add('0')" style="grid-column: span 2;">0</button>
-                <button onclick="add('.')">.</button>
+        <!-- CARD CALCULADORA -->
+        <div class="card">
+
+            <div class="icone-projeto">
+                <i class="fas fa-calculator"></i>
             </div>
 
-            <div class="footer">
-                Desenvolvido por Michelle 💜
-            </div>
+            <h3>Calculadora Gamer</h3>
+
+            <p>Calculadora feita com HTML, CSS e JavaScript.</p>
+
+            <a href="./calculadora.html">
+                <button>Ver Projeto</button>
+            </a>
 
         </div>
 
     </div>
 
     <script>
-        function add(valor) {
-            document.getElementById("display").value += valor;
-        }
-
-        function limpar() {
-            document.getElementById("display").value = "";
-        }
-
-        function calcular() {
-            try {
-                let resultado = eval(document.getElementById("display").value);
-                document.getElementById("display").value = resultado;
-            } catch {
-                alert("Erro na conta!");
-            }
+        function mensagem() {
+            alert("Contato disponível mediante solicitação 😉");
         }
     </script>
 
