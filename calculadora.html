@@ -1,25 +1,46 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <title>Calculadora Gamer</title>
+    <title>Calculadora | Michelle Dev</title>
 
     <style>
         body {
             margin: 0;
             height: 100vh;
-            background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+            background-size: 600% 600%;
+            animation: fundoAnimado 10s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+        }
+
+        @keyframes fundoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #00ffcc;
         }
 
         .calculadora {
-            background: #111;
+            background: rgba(0,0,0,0.7);
             padding: 20px;
             border-radius: 20px;
-            box-shadow: 0 0 20px #00ffcc;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0,255,200,0.3);
             width: 260px;
         }
 
@@ -47,67 +68,75 @@
             height: 50px;
             border: none;
             border-radius: 10px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
-            transition: 0.2s;
-            background: #222;
+            background: #1a1a1a;
             color: white;
-            box-shadow: 0 0 5px #00ffcc;
+            transition: 0.2s;
+            box-shadow: 0 0 5px rgba(0,255,200,0.2);
         }
 
         button:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
             background: #00ffcc;
-            color: #000;
+            color: black;
         }
 
         .igual {
             background: #00ffcc;
-            color: #000;
-        }
-
-        .igual:hover {
-            background: #00ffaa;
+            color: black;
         }
 
         .clear {
             background: #ff4d4d;
         }
 
-        .clear:hover {
-            background: #ff0000;
+        .footer {
+            margin-top: 10px;
+            font-size: 10px;
+            color: #aaa;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="calculadora">
+    <div class="container">
 
-        <input type="text" id="display" class="display" disabled>
+        <h1>💻 Calculadora Dev</h1>
 
-        <div class="botoes">
-            <button onclick="limpar()" class="clear">C</button>
-            <button onclick="add('/')">÷</button>
-            <button onclick="add('*')">×</button>
-            <button onclick="add('-')">-</button>
+        <div class="calculadora">
 
-            <button onclick="add('7')">7</button>
-            <button onclick="add('8')">8</button>
-            <button onclick="add('9')">9</button>
-            <button onclick="add('+')">+</button>
+            <input type="text" id="display" class="display" disabled>
 
-            <button onclick="add('4')">4</button>
-            <button onclick="add('5')">5</button>
-            <button onclick="add('6')">6</button>
-            <button onclick="calcular()" class="igual">=</button>
+            <div class="botoes">
+                <button onclick="limpar()" class="clear">C</button>
+                <button onclick="add('/')">÷</button>
+                <button onclick="add('*')">×</button>
+                <button onclick="add('-')">-</button>
 
-            <button onclick="add('1')">1</button>
-            <button onclick="add('2')">2</button>
-            <button onclick="add('3')">3</button>
+                <button onclick="add('7')">7</button>
+                <button onclick="add('8')">8</button>
+                <button onclick="add('9')">9</button>
+                <button onclick="add('+')">+</button>
 
-            <button onclick="add('0')" style="grid-column: span 2;">0</button>
-            <button onclick="add('.')">.</button>
+                <button onclick="add('4')">4</button>
+                <button onclick="add('5')">5</button>
+                <button onclick="add('6')">6</button>
+                <button onclick="calcular()" class="igual">=</button>
+
+                <button onclick="add('1')">1</button>
+                <button onclick="add('2')">2</button>
+                <button onclick="add('3')">3</button>
+
+                <button onclick="add('0')" style="grid-column: span 2;">0</button>
+                <button onclick="add('.')">.</button>
+            </div>
+
+            <div class="footer">
+                Desenvolvido por Michelle 💜
+            </div>
+
         </div>
 
     </div>
