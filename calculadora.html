@@ -11,40 +11,54 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #6a5cff, #4bc0c8);
+    background: radial-gradient(circle, #1a1a2e, #0f3460);
     font-family: Arial, sans-serif;
 }
 
 /* CAIXA */
 .calculadora {
-    background: #1e1e2f;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px #00f7ff;
-    width: 260px;
+    background: #111;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 40px #00f7ff;
+    width: 270px;
+    animation: surgir 0.6s ease;
+}
+
+/* ANIMAÇÃO ENTRADA */
+@keyframes surgir {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* TÍTULO */
 .titulo {
     text-align: center;
     color: #00f7ff;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
-/* VISOR CENTRALIZADO */
+/* VISOR */
 .display {
     width: 100%;
-    height: 60px;
+    height: 65px;
     margin-bottom: 15px;
-    background: #2c2c44;
+    background: #000;
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
-    font-size: 24px;
+    color: #00f7ff;
+    font-size: 26px;
+    box-shadow: inset 0 0 10px #00f7ff;
 }
 
 /* BOTÕES */
@@ -55,24 +69,30 @@ body {
 }
 
 button {
-    height: 50px;
+    height: 55px;
     border: none;
-    border-radius: 12px;
+    border-radius: 15px;
     font-size: 18px;
-    background: #3a3a5c;
+    background: #1f1f2e;
     color: white;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.15s;
 }
 
+/* ANIMAÇÃO CLICK */
+button:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px #00f7ff;
+}
+
+/* HOVER */
 button:hover {
-    transform: scale(1.05);
-    background: #50507a;
+    background: #2f2f4f;
 }
 
 /* ESPECIAIS */
-.clear { background: #ff5c5c; }
-.igual { background: #00f7ff; color: black; }
+.clear { background: #ff4d4d; }
+.igual { background: #00f7ff; color: black; font-weight: bold; }
 </style>
 </head>
 
@@ -85,28 +105,28 @@ button:hover {
 <div id="display" class="display">0</div>
 
 <div class="botoes">
-<button class="clear" onclick="limpar()">C</button>
-<button onclick="apagar()">←</button>
-<button onclick="inserir('/')">/</button>
-<button onclick="inserir('*')">*</button>
+<button class="clear" onclick="clickSom(); limpar()">C</button>
+<button onclick="clickSom(); apagar()">←</button>
+<button onclick="clickSom(); inserir('/')">/</button>
+<button onclick="clickSom(); inserir('*')">*</button>
 
-<button onclick="inserir('7')">7</button>
-<button onclick="inserir('8')">8</button>
-<button onclick="inserir('9')">9</button>
-<button onclick="inserir('-')">-</button>
+<button onclick="clickSom(); inserir('7')">7</button>
+<button onclick="clickSom(); inserir('8')">8</button>
+<button onclick="clickSom(); inserir('9')">9</button>
+<button onclick="clickSom(); inserir('-')">-</button>
 
-<button onclick="inserir('4')">4</button>
-<button onclick="inserir('5')">5</button>
-<button onclick="inserir('6')">6</button>
-<button onclick="inserir('+')">+</button>
+<button onclick="clickSom(); inserir('4')">4</button>
+<button onclick="clickSom(); inserir('5')">5</button>
+<button onclick="clickSom(); inserir('6')">6</button>
+<button onclick="clickSom(); inserir('+')">+</button>
 
-<button onclick="inserir('1')">1</button>
-<button onclick="inserir('2')">2</button>
-<button onclick="inserir('3')">3</button>
-<button class="igual" onclick="calcular()">=</button>
+<button onclick="clickSom(); inserir('1')">1</button>
+<button onclick="clickSom(); inserir('2')">2</button>
+<button onclick="clickSom(); inserir('3')">3</button>
+<button class="igual" onclick="clickSom(); calcular()">=</button>
 
-<button onclick="inserir('0')">0</button>
-<button onclick="inserir('.')">.</button>
+<button onclick="clickSom(); inserir('0')">0</button>
+<button onclick="clickSom(); inserir('.')">.</button>
 </div>
 
 </div>
@@ -114,11 +134,17 @@ button:hover {
 <script>
 let display = document.getElementById("display");
 
-function inserir(valor){
+/* SOM */
+function clickSom(){
+    let audio = new Audio("https://www.soundjay.com/button/sounds/button-16.mp3");
+    audio.play();
+}
+
+function inserir(v){
     if(display.innerText === "0"){
-        display.innerText = valor;
+        display.innerText = v;
     } else {
-        display.innerText += valor;
+        display.innerText += v;
     }
 }
 
