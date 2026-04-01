@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Michelle Dev</title>
 
+    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -31,7 +32,9 @@
             object-fit: cover;
         }
 
-        h1 { color: #333; }
+        h1 {
+            color: #333;
+        }
 
         p {
             color: #777;
@@ -49,6 +52,10 @@
             background: linear-gradient(135deg, #0077b5, #005582);
         }
 
+        button:hover {
+            transform: scale(1.05);
+        }
+
         .whatsapp {
             background: linear-gradient(135deg, #25D366, #1ebe5d);
         }
@@ -62,6 +69,18 @@
             padding: 15px;
             border-radius: 15px;
             margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .projeto:hover {
+            transform: scale(1.03);
+        }
+
+        /* ÍCONE BONITO */
+        .icone {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #6c63ff;
         }
     </style>
 </head>
@@ -91,13 +110,21 @@
 
     <h3>Meus projetos</h3>
 
+    <!-- PROJETO CALCULADORA -->
     <div class="projeto">
+
+        <!-- ÍCONE (SUBSTITUI A IMAGEM FEIA) -->
+        <div class="icone">
+            <i class="fas fa-calculator"></i>
+        </div>
+
         <h3>🧮 CALCULADORA</h3>
         <p>Calculadora interativa com tema gamer neon.</p>
 
         <a href="calculadora.html" target="_blank">
             <button>Ver projeto</button>
         </a>
+
     </div>
 
 </div>
