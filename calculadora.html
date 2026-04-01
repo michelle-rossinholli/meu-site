@@ -15,17 +15,28 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* CAIXA */
 .calculadora {
     background: #1e1e2f;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    box-shadow: 0 0 30px #00f7ff;
     width: 260px;
 }
 
+/* TÍTULO */
+.titulo {
+    text-align: center;
+    color: #00f7ff;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* VISOR CENTRALIZADO */
 .display {
     width: 100%;
-    height: 70px;
+    height: 60px;
     margin-bottom: 15px;
     background: #2c2c44;
     border-radius: 12px;
@@ -33,10 +44,10 @@ body {
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-size: 26px;
-    text-align: center;
+    font-size: 24px;
 }
 
+/* BOTÕES */
 .botoes {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -44,23 +55,32 @@ body {
 }
 
 button {
-    height: 55px;
+    height: 50px;
     border: none;
     border-radius: 12px;
     font-size: 18px;
     background: #3a3a5c;
     color: white;
     cursor: pointer;
+    transition: 0.2s;
 }
 
-.igual { background: #4bc0c8; color: black; }
-.clear { background: #ff5c5c; }
-</style>
+button:hover {
+    transform: scale(1.05);
+    background: #50507a;
+}
 
+/* ESPECIAIS */
+.clear { background: #ff5c5c; }
+.igual { background: #00f7ff; color: black; }
+</style>
 </head>
+
 <body>
 
 <div class="calculadora">
+
+<div class="titulo">CALCULADORA</div>
 
 <div id="display" class="display">0</div>
 
@@ -94,11 +114,11 @@ button {
 <script>
 let display = document.getElementById("display");
 
-function inserir(v){
+function inserir(valor){
     if(display.innerText === "0"){
-        display.innerText = v;
+        display.innerText = valor;
     } else {
-        display.innerText += v;
+        display.innerText += valor;
     }
 }
 
