@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Michelle Dev</title>
 
-    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -32,9 +31,7 @@
             object-fit: cover;
         }
 
-        h1 {
-            color: #333;
-        }
+        h1 { color: #333; }
 
         p {
             color: #777;
@@ -66,169 +63,50 @@
             border-radius: 15px;
             margin-top: 15px;
         }
-
-        /* CALCULADORA GAMER */
-        .calc-box {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .calculadora {
-            background: #1e1e2f;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px #00f7ff;
-        }
-
-        .calculadora input {
-            width: 100%;
-            height: 60px;
-            border-radius: 10px;
-            border: none;
-            margin-bottom: 15px;
-            text-align: right;
-            font-size: 22px;
-            padding: 10px;
-            background: #2c2c3e;
-            color: #fff;
-        }
-
-        .botoes {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-        }
-
-        .botoes button {
-            height: 50px;
-            border-radius: 10px;
-            border: none;
-            background: #3a3a4f;
-            color: white;
-            font-size: 18px;
-            transition: 0.2s;
-        }
-
-        .botoes button:hover {
-            transform: scale(1.05);
-            background: #50506a;
-        }
-
-        .clear {
-            background: #ff4d4d !important;
-        }
-
-        .igual {
-            background: #00f7ff !important;
-            color: black;
-        }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <img class="foto" src="foto.jpg">
+    <img class="foto" src="foto.jpg">
 
-        <h1>Oi, eu sou a Michelle 👩‍💻</h1>
-        <p>Desenvolvedora em formação 🚀</p>
+    <h1>Oi, eu sou a Michelle 👩‍💻</h1>
+    <p>Desenvolvedora em formação 🚀</p>
 
-        <p style="font-size:12px;">
-            Apaixonada por tecnologia, criando meus primeiros projetos 💻✨
-        </p>
+    <p style="font-size:12px;">
+        Apaixonada por tecnologia, criando meus primeiros projetos 💻✨
+    </p>
 
-        <a href="https://www.linkedin.com/in/michelle-rossinholli/" target="_blank">
-            <button><i class="fab fa-linkedin"></i> Meu LinkedIn</button>
+    <a href="https://www.linkedin.com/in/michelle-rossinholli/" target="_blank">
+        <button><i class="fab fa-linkedin"></i> Meu LinkedIn</button>
+    </a>
+
+    <button class="whatsapp" onclick="mensagem()">
+        <i class="fab fa-whatsapp"></i> Fale comigo
+    </button>
+
+    <hr>
+
+    <h3>Meus projetos</h3>
+
+    <div class="projeto">
+        <h3>🧮 CALCULADORA</h3>
+        <p>Calculadora interativa com tema gamer neon.</p>
+
+        <a href="calculadora.html" target="_blank">
+            <button>Ver projeto</button>
         </a>
-
-        <button class="whatsapp" onclick="mensagem()">
-            <i class="fab fa-whatsapp"></i> Fale comigo
-        </button>
-
-        <hr>
-
-        <h3>Meus projetos</h3>
-
-        <!-- No seu index.html, localize o bloco do projeto da calculadora e substitua o botão por este: -->
-<div class="projeto">
-  <h3>🧮 Calculadora Gamer</h3>
-  <p>Calculadora interativa com tema gamer neon.</p>
-  <!-- Botão/link abre calculadora.html em nova aba com acessibilidade -->
-  <a href="calculadora.html" target="_blank" rel="noopener noreferrer"
-     aria-label="Ver projeto (abre em nova aba)">
-    <button>Ver projeto</button>
-  </a>
-</div>
-
-
-                    <input type="text" id="display" disabled>
-
-                    <div class="botoes">
-                        <button class="clear" onclick="limpar()">C</button>
-                        <button onclick="apagar()">←</button>
-                        <button onclick="add('/')">/</button>
-                        <button onclick="add('*')">*</button>
-
-                        <button onclick="add('7')">7</button>
-                        <button onclick="add('8')">8</button>
-                        <button onclick="add('9')">9</button>
-                        <button onclick="add('-')">-</button>
-
-                        <button onclick="add('4')">4</button>
-                        <button onclick="add('5')">5</button>
-                        <button onclick="add('6')">6</button>
-                        <button onclick="add('+')">+</button>
-
-                        <button onclick="add('1')">1</button>
-                        <button onclick="add('2')">2</button>
-                        <button onclick="add('3')">3</button>
-                        <button class="igual" onclick="resultado()">=</button>
-
-                        <button onclick="add('0')">0</button>
-                        <button onclick="add('.')">.</button>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
 
-    <script>
-        function mensagem() {
-            alert("Contato disponível 😉");
-        }
+</div>
 
-        function abrirCalculadora() {
-            document.getElementById("calc").style.display = "block";
-        }
-
-        function add(valor) {
-            document.getElementById("display").value += valor;
-        }
-
-        function limpar() {
-            document.getElementById("display").value = "";
-        }
-
-        function apagar() {
-            let valor = document.getElementById("display").value;
-            document.getElementById("display").value = valor.slice(0, -1);
-        }
-
-        function resultado() {
-            try {
-                let res = eval(document.getElementById("display").value);
-                document.getElementById("display").value = res;
-            } catch {
-                alert("Erro");
-            }
-        }
-    </script>
+<script>
+function mensagem() {
+    alert("Contato disponível 😉");
+}
+</script>
 
 </body>
-
 </html>
