@@ -23,12 +23,6 @@
             text-align: center;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: aparecer 1s ease;
-            transition: 0.3s;
-        }
-
-        .container:hover {
-            transform: translateY(-5px);
         }
 
         .foto {
@@ -36,18 +30,10 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center top;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .foto:hover {
-            transform: scale(1.1);
         }
 
         h1 {
             color: #333;
-            font-size: 22px;
         }
 
         p {
@@ -57,18 +43,13 @@
 
         button {
             width: 100%;
-            background: linear-gradient(135deg, #0077b5, #005582);
-            color: white;
+            padding: 12px;
             border: none;
-            padding: 12px 20px;
             border-radius: 25px;
+            margin-top: 10px;
             cursor: pointer;
-            transition: 0.3s;
-            margin-top: 15px;
-        }
-
-        button:hover {
-            transform: scale(1.05);
+            color: white;
+            background: linear-gradient(135deg, #0077b5, #005582);
         }
 
         .whatsapp {
@@ -76,9 +57,6 @@
         }
 
         hr {
-            border: none;
-            height: 1px;
-            background: #eee;
             margin: 20px 0;
         }
 
@@ -87,42 +65,62 @@
             padding: 15px;
             border-radius: 15px;
             margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
         }
 
-        .projeto:hover {
-            transform: scale(1.03);
-        }
-
-        .projeto img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .projeto h3 {
-            margin: 5px 0;
-            font-size: 16px;
-        }
-
+        /* CALCULADORA GAMER */
         .calc-box {
             display: none;
             margin-top: 20px;
         }
 
-        .display {
+        .calculadora {
+            background: #1e1e2f;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px #00f7ff;
+        }
+
+        .calculadora input {
             width: 100%;
-            height: 40px;
-            margin-bottom: 10px;
+            height: 60px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 15px;
             text-align: right;
-            font-size: 18px;
+            font-size: 22px;
+            padding: 10px;
+            background: #2c2c3e;
+            color: #fff;
         }
 
         .botoes {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
+            gap: 8px;
+        }
+
+        .botoes button {
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            background: #3a3a4f;
+            color: white;
+            font-size: 18px;
+            transition: 0.2s;
+        }
+
+        .botoes button:hover {
+            transform: scale(1.05);
+            background: #50506a;
+        }
+
+        .clear {
+            background: #ff4d4d !important;
+        }
+
+        .igual {
+            background: #00f7ff !important;
+            color: black;
         }
     </style>
 </head>
@@ -130,66 +128,69 @@
 <body>
 
     <div class="container">
-        <img class="foto" src="foto.jpg" alt="Foto Michelle">
+
+        <img class="foto" src="foto.jpg">
 
         <h1>Oi, eu sou a Michelle 👩‍💻</h1>
         <p>Desenvolvedora em formação 🚀</p>
 
-        <p style="font-size:12px; margin-top:10px;">
+        <p style="font-size:12px;">
             Apaixonada por tecnologia, criando meus primeiros projetos 💻✨
         </p>
 
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/michelle-rossinholli/" target="_blank">
-            <button>
-                <i class="fab fa-linkedin"></i> Meu LinkedIn
-            </button>
+            <button><i class="fab fa-linkedin"></i> Meu LinkedIn</button>
         </a>
 
-        <!-- WhatsApp -->
         <button class="whatsapp" onclick="mensagem()">
             <i class="fab fa-whatsapp"></i> Fale comigo
         </button>
 
         <hr>
 
-        <p><b>Meus projetos:</b></p>
+        <h3>Meus projetos</h3>
 
-        <!-- CALCULADORA -->
         <div class="projeto">
-            <h3>🧮 Calculadora</h3>
-            <p>Calculadora funcional feita com JavaScript.</p>
+            <h4>🧮 Calculadora Gamer</h4>
+            <p>Calculadora interativa com estilo gamer neon.</p>
 
             <button onclick="abrirCalculadora()">Ver projeto</button>
 
             <div class="calc-box" id="calc">
-                <input type="text" id="display" class="display" disabled>
 
-                <div class="botoes">
-                    <button onclick="limpar()">C</button>
-                    <button onclick="apagar()">←</button>
-                    <button onclick="add('/')">/</button>
-                    <button onclick="add('*')">*</button>
+                <div class="calculadora">
 
-                    <button onclick="add('7')">7</button>
-                    <button onclick="add('8')">8</button>
-                    <button onclick="add('9')">9</button>
-                    <button onclick="add('-')">-</button>
+                    <input type="text" id="display" disabled>
 
-                    <button onclick="add('4')">4</button>
-                    <button onclick="add('5')">5</button>
-                    <button onclick="add('6')">6</button>
-                    <button onclick="add('+')">+</button>
+                    <div class="botoes">
+                        <button class="clear" onclick="limpar()">C</button>
+                        <button onclick="apagar()">←</button>
+                        <button onclick="add('/')">/</button>
+                        <button onclick="add('*')">*</button>
 
-                    <button onclick="add('1')">1</button>
-                    <button onclick="add('2')">2</button>
-                    <button onclick="add('3')">3</button>
-                    <button onclick="resultado()">=</button>
+                        <button onclick="add('7')">7</button>
+                        <button onclick="add('8')">8</button>
+                        <button onclick="add('9')">9</button>
+                        <button onclick="add('-')">-</button>
 
-                    <button onclick="add('0')">0</button>
-                    <button onclick="add('.')">.</button>
+                        <button onclick="add('4')">4</button>
+                        <button onclick="add('5')">5</button>
+                        <button onclick="add('6')">6</button>
+                        <button onclick="add('+')">+</button>
+
+                        <button onclick="add('1')">1</button>
+                        <button onclick="add('2')">2</button>
+                        <button onclick="add('3')">3</button>
+                        <button class="igual" onclick="resultado()">=</button>
+
+                        <button onclick="add('0')">0</button>
+                        <button onclick="add('.')">.</button>
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
 
     </div>
